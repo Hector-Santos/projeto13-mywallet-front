@@ -30,8 +30,8 @@ export default function Login(){
         }
         let promise = axios.post("http://localhost:5000/sign-in", body)
         promise.then((response => {
-            console.log(response)
             setToken(response.data)
+            navigate("/wallet")
             
             
           }))
@@ -83,7 +83,8 @@ font-family: 'Raleway', sans-serif;
 font-size: 20px;
 height: 100vh;
 width: 100vw;
-padding-bottom: 100px;
+padding-bottom: 50px;
+position: relative;
 img{
     height: auto;
     width: 200px;
@@ -92,7 +93,7 @@ input{
 height: 45px;
 border-radius: 5px;
 margin-bottom: 10px;
-width: 80vw;
+width: 85vw;
 color : ${props => props.colorInput };
 border: 1px solid #D4D4D4;
 font-size: 20px;
@@ -108,7 +109,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 height: 45px;
-width: 81vw;
+width: 86vw;
 border-radius: 5px;
 color: white;
 font-weight: bold;
@@ -124,14 +125,19 @@ h1{
     color: #ffffff;
     margin-bottom: 30px;
 }
-h2{
+h2, h3{
     font-family: 'Raleway', sans-serif;
     font-size: 16px;
     color: #ffffff;
     margin-top: 30px;
     text-decoration: underline;
 }
+h3{
+    font-size: 25px;
+    margin-top: 5px;
+    text-decoration: none;
+}
 ` 
 export const Form = styled.div`
-margin-left: 8vw;
+margin-left: 5vw;
 `
