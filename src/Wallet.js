@@ -19,7 +19,10 @@ export default function Wallet() {
       }
       setSoma(aux)
     }
- 
+ function refreshLogin(){
+  navigate("/")
+  document.location.reload()
+ }
   useEffect(() => {
   
     let promise = axios.get("http://localhost:5000/user", {
@@ -55,7 +58,7 @@ export default function Wallet() {
     <Container >
 
       <Title><h3>{`Olá, ${name}`}</h3>
-        <ion-icon name="exit-outline"></ion-icon>
+        <ion-icon onClick={() => refreshLogin()} name="exit-outline"></ion-icon>
       </Title>
 
       <Logs>
