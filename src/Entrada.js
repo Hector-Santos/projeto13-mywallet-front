@@ -33,7 +33,7 @@ export default function Entrada(){
             tipo:"entrada",
             data: hoje
         }
-        let promise = axios.post("http://localhost:5000/entrada", body,{
+        let promise = axios.post("https://mywallet010.herokuapp.com/entrada", body,{
             headers: {
               'Authorization': `Bearer ${token}` 
             }

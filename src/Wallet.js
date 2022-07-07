@@ -25,7 +25,7 @@ export default function Wallet() {
  }
   useEffect(() => {
   
-    let promise = axios.get("http://localhost:5000/user", {
+    let promise = axios.get("https://mywallet010.herokuapp.com/user", {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -37,7 +37,7 @@ export default function Wallet() {
     console.log(response)
     }
     ))
-    let promise1 = axios.get("http://localhost:5000/logs", {
+    let promise1 = axios.get("https://mywallet010.herokuapp.com/logs", {
       headers: {
         'Authorization': `Bearer ${token}`
       }
