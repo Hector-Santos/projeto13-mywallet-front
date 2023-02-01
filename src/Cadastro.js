@@ -36,7 +36,7 @@ export default function Cadastro(){
                 password: senha
             }
 
-        let promise = axios.post(`${REACT_APP_REQUEST_URL}/sign-up"`, body);
+        let promise = axios.post(`${REACT_APP_REQUEST_URL}/sign-up`, body);
         promise.then((response => {    
             console.log(response)
             navigate("/")
@@ -48,7 +48,7 @@ export default function Cadastro(){
             setColorButton("#A328D6")
             setColorInput("black")
             setDisabled(false)
-            setBotao("Login")
+            setBotao("Cadastro")
             }
             ))
           
