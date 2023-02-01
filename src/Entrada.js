@@ -19,9 +19,9 @@ export default function Entrada(){
     const [colorInput, setColorInput] = useState("black");
     const navigate = useNavigate();
     const REACT_APP_REQUEST_URL = process.env.REACT_APP_REQUEST_URL
-
+    console.log(REACT_APP_REQUEST_URL)
     function submeterEntrada(event) {
-      console.log(REACT_APP_REQUEST_URL)
+      
         event.preventDefault()
         setDisabled(true)
         setColorButton("#9a78ba")
