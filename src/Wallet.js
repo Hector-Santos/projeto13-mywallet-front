@@ -12,6 +12,8 @@ export default function Wallet() {
   const [logs, setLogs]= useState("");
   const [soma, setSoma] = useState(0)
   const navigate = useNavigate();
+  const REACT_APP_REQUEST_URL = process.env.REACT_APP_REQUEST_URL
+
   function getSoma(logs){
       let aux = 0
       for(let i=0; i< logs.length; i++){
@@ -25,7 +27,7 @@ export default function Wallet() {
  }
   useEffect(() => {
   
-    let promise = axios.get("https://mywallet010.herokuapp.com/user", {
+    let promise = axios.get(`${REACT_APP_REQUEST_URL}/user`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -37,7 +39,7 @@ export default function Wallet() {
     console.log(response)
     }
     ))
-    let promise1 = axios.get("https://mywallet010.herokuapp.com/logs", {
+    let promise1 = axios.get(`${REACT_APP_REQUEST_URL}/logs`, {
       headers: {
         'Authorization': `Bearer ${token}`
       }

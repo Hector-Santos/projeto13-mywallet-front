@@ -17,6 +17,7 @@ export default function Cadastro(){
     const [colorButton, setColorButton] = useState("#A328D6");
     const [colorInput, setColorInput] = useState("black");
     const navigate = useNavigate();
+    const REACT_APP_REQUEST_URL = process.env.REACT_APP_REQUEST_URL
 
     function fazerCadastro(event) {
         event.preventDefault()
@@ -35,9 +36,7 @@ export default function Cadastro(){
                 password: senha
             }
 
-        let promise = axios.post(
-        "https://mywallet010.herokuapp.com/sign-up"
-        ,body)
+        let promise = axios.post(`${REACT_APP_REQUEST_URL}/sign-up"`, body);
         promise.then((response => {    
             console.log(response)
             navigate("/")

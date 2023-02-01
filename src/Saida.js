@@ -18,7 +18,7 @@ export default function Saída(){
     const [colorButton, setColorButton] = useState("#A328D6");
     const [colorInput, setColorInput] = useState("black");
     const navigate = useNavigate();
-
+    const REACT_APP_REQUEST_URL = process.env.REACT_APP_REQUEST_URL
 
     function submeterSaída(event) {
         event.preventDefault()
@@ -33,7 +33,7 @@ export default function Saída(){
             tipo:"saida",
             data: hoje
         }
-        let promise = axios.post("https://mywallet010.herokuapp.com/saida", body,{
+        let promise = axios.post(`${REACT_APP_REQUEST_URL}/saida`, body,{
             headers: {
               'Authorization': `Bearer ${token}` 
             }

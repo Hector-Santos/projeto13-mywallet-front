@@ -24,11 +24,13 @@ export default function Login(){
         setColorButton("#9a78ba")
         setColorInput("#AFAFAF")
         setBotao(<ThreeDots color="white" height={80} width={80} />)
+        const REACT_APP_REQUEST_URL = process.env.REACT_APP_REQUEST_URL
+        
         let body = {
             email:email,
             password:senha
         }
-        let promise = axios.post("https://mywallet010.herokuapp.com/sign-in", body)
+        let promise = axios.post(`${REACT_APP_REQUEST_URL}/sign-in`, body)
         promise.then((response => {
             setToken(response.data)
             navigate("/wallet")
